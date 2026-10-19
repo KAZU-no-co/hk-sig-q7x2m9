@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>スカパー！PICK UP はまこれ横浜</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; cursor: none; }
+  /* 1280x720 の固定キャンバスを画面いっぱいに拡大縮小 */
+  #stage {
+    position: absolute; left: 50%; top: 50%;
+    width: 1280px; height: 720px;
+    transform-origin: center center;
+    background: url("background.jpg") no-repeat center / 1280px 720px;
+    font-family: "Hiragino Kaku Gothic ProN", "Meiryo", "Noto Sans JP", sans-serif;
+  }
+  /* 白枠の内側に収まる表示スロット（座標は背景画像に合わせた値） */
+  .slot {
+    position: absolute; left: 838px; width: 400px;
+    display: flex; flex-direction: column;
+    opacity: 0; transition: opacity .8s ease;
+  }
+  .slot.show { opacity: 1; }
+  #slot1 { top: 66px;  height: 286px; }   /* 上の白枠（「新着情報」タブの下） */
+  #slot2 { top: 386px; height: 298px; }   /* 下の白枠 */
+  .slot .thumb {
+    flex: 0 0 auto; width: 400px; height: 190px;
+    object-fit: cover; border-radius: 8px; background: #dfe9f3;
+  }
+  #slot2 .thumb { height: 200px; }
+  .slot .title {
+    flex: 1 1 auto; margin-top: 8px;
+    font-size: 21px; line-height: 1.35; font-weight: 700; color: #222;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .slot .date { font-size: 13px; color: #666; margin-top: 2px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="slot" id="slot1"><img class="thumb" alt="" referrerpolicy="no-referrer"><div class="title"></div></div>
+  <div class="slot" id="slot2"><img class="thumb" alt="" referrerpolicy="no-referrer"><div class="title"></div></div>
+</div>
+
+<script>
+(function () {
+  var ROTATE_MS  = 12000;            // 切り替え間隔
+  var REFRESH_MS = 30 * 60 * 1000;   // feed.json の再読込間隔
+  var FADE_MS    = 800;
+
+  var items = [];
+  var pos = 0;
+  var slots = [document.getElementById("slot1"), document.getElementById("slot2")];
+
+  // 画面サイズに合わせて拡大縮小
+  var stage = document.getElementById("stage");
+  function fit() {
+    var s = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+    stage.style.transform = "translate(-50%, -50%) scale(" + s + ")";
+  }
+  window.addEventListener("resize", fit); fit();
+
+  function fill(slot, it) {
+    slot.querySelector(".thumb").src = it.image || "";
+    slot.querySelector(".title").textContent = it.title || "";
+  }
+
+  function render() {
+    if (!items.length) return;
+    var base = pos;   // タイムアウト内で pos が進んでしまうのを防ぐ
+    slots.forEach(function (slot, i) {
+      slot.classList.remove("show");
+      setTimeout(function () {
+        fill(slot, items[(base + i) % items.length]);
+        slot.classList.add("show");
+      }, FADE_MS);
+    });
+    pos = (pos + 2) % items.length;
+  }
+
+  // 取得失敗時は前回の表示を保持する
+  function load() {
+    fetch("feed.json?t=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) {
+        var list = (d.items || []).filter(function (x) { return x.title && x.image; });
+        if (list.length >= 2) { var first = !items.length; items = list; if (first) render(); }
+      })
+      .catch(function () { /* 何もしない（前回データのまま） */ });
+  }
+
+  load();
+  setInterval(render, ROTATE_MS);
+  setInterval(load, REFRESH_MS);
+})();
+</script>
+</body>
+</html>
