@@ -2,6 +2,12 @@
   "source": "https://hamakore.yokohama/feed",
   "items": [
     {
+      "title": "横浜・三溪園で市内最大規模「菊花展」開催！大菊や江戸菊など約240点の菊花集結・魅力深掘り特別企画も",
+      "link": "https://hamakore.yokohama/sankeien-yokohama-kiku-202610/",
+      "image": "https://hamakore.yokohama/uploads/2026/10/sankeien-yokohama-kiku-202610-01.jpg",
+      "date": "2026-10-20T06:36:40+00:00"
+    },
+    {
       "title": "全国34店舗「ヨコハマコーヒーフェスティバル」3年ぶりに開催！ミニサイズの飲み比べ中心に新たな出会いを",
       "link": "https://hamakore.yokohama/yokohama-coffee-festival-202610/",
       "image": "https://hamakore.yokohama/uploads/2026/10/yokohama-coffee-festival-202610-02.jpg",
@@ -54,12 +60,6 @@
       "link": "https://hamakore.yokohama/yamashita-park-winter-wander-park-202610/",
       "image": "https://hamakore.yokohama/uploads/2026/10/yamashita-park-winter-wander-park-202610-01.jpg",
       "date": "2026-10-14T02:10:17+00:00"
-    },
-    {
-      "title": "横浜高島屋“国内最大級”大北海道展を2週連続開催！総勢100店舗が贈る“今”推したい味覚が続々",
-      "link": "https://hamakore.yokohama/yokohama-takashimaya-hokkaido-202610/",
-      "image": "https://hamakore.yokohama/uploads/2026/10/yokohama-takashimaya-hokkaido-202610-00.jpg",
-      "date": "2026-10-14T00:52:30+00:00"
     }
   ]
 }
