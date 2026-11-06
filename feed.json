@@ -2,7 +2,19 @@
   "source": "https://hamakore.yokohama/feed",
   "items": [
     {
-      "title": "ウェスティンホテル横浜“リンツチョコレート”秋限定アフタヌーンティー登場！シャインマスカットや柚子など旬と共演",
+      "title": "横浜駅で第14弾「不用衣類の回収キャンペーン」開催！最大1000円分のクーポン先着配布",
+      "link": "https://hamakore.yokohama/yokohama-station-city-202611/",
+      "image": "https://hamakore.yokohama/uploads/2026/11/yokohama-station-city-202611-01.jpg",
+      "date": "2026-11-06T02:37:27+00:00"
+    },
+    {
+      "title": "横浜港大さん橋「さかな文化祭2026」食べて・見て・学んで海と魚がもっと身近になる2日間",
+      "link": "https://hamakore.yokohama/sakanabunka-yokohama-202611/",
+      "image": "https://hamakore.yokohama/uploads/2026/11/sakanabunka-yokohama-202611-01.jpg",
+      "date": "2026-11-06T02:05:49+00:00"
+    },
+    {
+      "title": "ウェスティンホテル横浜“リンツチョコレート”秋アフタヌーンティー登場！旬の果実と約20日間の共演",
       "link": "https://hamakore.yokohama/westin-hotel-yokohama-afternoontea-202611/",
       "image": "https://hamakore.yokohama/uploads/2026/10/westin-hotel-yokohama-afternoontea-202611-01.jpg",
       "date": "2026-11-05T07:36:57+00:00"
@@ -48,18 +60,6 @@
       "link": "https://hamakore.yokohama/towers-milight-2026-yokohama-minatomirai-info/",
       "image": "https://hamakore.yokohama/uploads/2026/10/towers-milight-2026-yokohama-minatomirai-info-00.jpg",
       "date": "2026-10-30T08:42:14+00:00"
-    },
-    {
-      "title": "横浜ベイクォーター2026年クリスマス“ブルーサファイア”着想のツリー登場！音楽連動のライティングショーも",
-      "link": "https://hamakore.yokohama/yokohama-bayquarter-christmas-2026-info/",
-      "image": "https://hamakore.yokohama/uploads/2026/10/yokohama-bayquarter-christmas-2026-info-202610301414550.jpg",
-      "date": "2026-10-30T05:11:56+00:00"
-    },
-    {
-      "title": "横浜みなとみらい“秋の蚤の市”11月21日から開催！古着・アンティーク・焼き菓子などのべ500店舗以上集結",
-      "link": "https://hamakore.yokohama/vintage-artisan-market-minatomirai-202610/",
-      "image": "https://hamakore.yokohama/uploads/2026/10/vintage-artisan-market-minatomirai-202610-01.jpg",
-      "date": "2026-10-30T03:58:49+00:00"
     }
   ]
 }
